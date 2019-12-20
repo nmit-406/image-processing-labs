@@ -15,7 +15,7 @@ model = nn.Sequential(
             nn.Softmax()
         )
 
-PATH = "test.pt"
+PATH = "./models/naive_nn.pt"
 model.load_state_dict(torch.load(PATH))
 model.eval()
 
