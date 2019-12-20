@@ -1,27 +1,38 @@
 function save() {
-    // document.getElementById("canvasimg").style.border = "2px solid";
     var dataURL = canvas.toDataURL();
-    // document.getElementById("canvasimg").src = dataURL;
-    // document.getElementById("canvasimg").style.display = "inline";
     var fd = new FormData();//dataURL);
-    // fd.append('img', dataURL);
+    fd.append('img', dataURL);
     // fd.append('text', 'text');
-
+    // console.log(dataURL);
     $.ajax({
         type: "POST",
         url: "/mnist",
-      withCredentials: true,
-      data:{
-         imageBase64: dataURL
-       },
-      //data: fd,
-      processData: false,
-      contentType: false
-    }).done(function(o) {
-          alert(o) 
-          console.log('saved'); 
-          console.log(o); 
+        
+        data: fd,
+        processData: false,
+        contentType: false,
+        cache: false,
+    }).done(function(response) {
+        sendCorrectOrWrong(confirm('you wrote ' + response.prediction + '?'), response)
     });
+}
+
+function sendCorrectOrWrong(confirming, response) {
+    var fd = new FormData();
+    fd.append('correct_or_wrong', confirming);
+    fd.append('timestamp', response.timestamp);
+    fd.append('prediction', response.prediction);
+    $.ajax({
+        type: "POST",
+        url: "/correct_or_wrong",
+        
+        data: fd,
+        processData: false,
+        contentType: false,
+        cache: false,
+    })
+    if(confirming){console.log('correct')}
+    else {console.log('wrong')}
 }
 
 var canvas, ctx, flag = false,
@@ -32,7 +43,7 @@ var canvas, ctx, flag = false,
       dot_flag = false;
 
 var x = "black",
-    y = 2;
+    y = 20;
 
 function init() {
     canvas = document.getElementById('can');
@@ -76,7 +87,7 @@ function findxy(res, e) {
         if (dot_flag) {
             ctx.beginPath();
             ctx.fillStyle = x;
-            ctx.fillRect(currX, currY, 2, 2);
+            ctx.fillRect(currX, currY, 5, 5);
             ctx.closePath();
             dot_flag = false;
         }
@@ -92,5 +103,12 @@ function findxy(res, e) {
             currY = e.clientY - canvas.offsetTop;
             draw();
         }
+    }
+}
+function erase() {
+    var m = confirm("Want to clear");
+    if (m) {
+        ctx.clearRect(0, 0, w, h);
+        // document.getElementById("canvasimg").style.display = "none";
     }
 }
