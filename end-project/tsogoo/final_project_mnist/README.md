@@ -16,18 +16,18 @@ This README currently includes:
 ### How To Work
 
 Run following commands to start the back-end server
-'''
+```
 git clone https://github.com/nmit-406/image-processing-labs.git # if you did not clone
 cd end-project/tsogoo/final_project_mnist/mnist/
 pip install -r requirement.txt
 python app.py
-'''
+```
 
 
 Open your browser and copy the link below
-'''
+```
 http://localhost:5000
-'''
+```
 
 ### Further Improvements
 
