@@ -2,10 +2,16 @@
   <head>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
     <script src="./static/script.js"></script>
+    <link rel="stylesheet" href="./static/styles.css">
   </head>
   <body onload="init()">
-      <canvas id="can" width="200" height="200" style="position:absolute;top:10%;left:10%;border:2px solid;"></canvas>
-      <input type="button" value="save" id="btn" size="30" onclick="save()" style="position:absolute;top:55%;left:10%;">
-      <input type="button" value="clear" id="clr" size="23" onclick="erase()" style="position:absolute;top:55%;left:15%;">
+    <div id='container'>
+      <p>Та 0-9-ийн хооронд цифр бичнэ үү?</p>
+      <canvas id="can" width="200" height="200"></canvas>
+      <div id="btn_div">
+        <input type="button" value="Шалгах" id="btn" size="40" onclick="save()">
+        <input type="button" value="Арилгах" id="clr" size="40" onclick="erase()">
+      </div>
+    </div>
   </body>
 </html>

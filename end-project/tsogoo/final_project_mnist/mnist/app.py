@@ -13,7 +13,8 @@ from time import time
 
 
 # local import
-from predictor.nn_mnist import predict_mnist
+# from predictor.nn_mnist import predict_mnist
+from predictor.cnn_mnist import predict_mnist # for the use of CNN
 # from flask_cors import CORS
 
 app = Flask(__name__, static_folder='./template/static', template_folder='./template')
@@ -62,12 +63,12 @@ class CorrectOrWrong(Resource):
         print(request.form.get("correct_or_wrong"))
         itis = request.form.get("correct_or_wrong")
         timestamp = request.form.get("timestamp")
-        prediction = request.form.get("prediction")
+        correction = request.form.get("correction")
 
         folder = 'correct' if itis == 'true' else 'wrong'
-        print(folder)
-        os.replace(f'./users_choice/img-{timestamp}.png', f'./users_choice/{folder}/{prediction}-{timestamp}.png')
-        print('saved!')
+        
+        os.replace(f'./users_choice/img-{timestamp}.png', f'./users_choice/{folder}/{correction}-{timestamp}.png')
+        print(f"moved to {folder}/{correction}-{timestamp}.png")
         # return 'post'
 
 api.add_resource(MNIST, '/mnist')

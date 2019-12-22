@@ -13,15 +13,24 @@ function save() {
         contentType: false,
         cache: false,
     }).done(function(response) {
-        sendCorrectOrWrong(confirm('you wrote ' + response.prediction + '?'), response)
+        sendCorrectOrWrong(confirm('Та ' + response.prediction + ' гэж бичсэн үү?'), response)
+        erase();
     });
 }
 
 function sendCorrectOrWrong(confirming, response) {
+    
+    var correction = response.prediction
+    if(confirming){console.log('correct')}
+    else {
+        console.log('wrong')
+        correction = prompt('Ямар цифр байсан юм бэ?', "");
+    }
+
     var fd = new FormData();
     fd.append('correct_or_wrong', confirming);
     fd.append('timestamp', response.timestamp);
-    fd.append('prediction', response.prediction);
+    fd.append('correction', correction);
     $.ajax({
         type: "POST",
         url: "/correct_or_wrong",
@@ -31,8 +40,16 @@ function sendCorrectOrWrong(confirming, response) {
         contentType: false,
         cache: false,
     })
-    if(confirming){console.log('correct')}
-    else {console.log('wrong')}
+}
+
+function disableSubmission() {
+    var submit_btn = document.getElementById('btn');
+    submit_btn.disabled = true;
+}
+
+function enableSubmission() {
+    var submit_btn = document.getElementById('btn');
+    submit_btn.disabled = false;
 }
 
 var canvas, ctx, flag = false,
@@ -63,15 +80,23 @@ function init() {
     canvas.addEventListener("mouseout", function (e) {
         findxy('out', e)
     }, false);
+
+    disableSubmission();
+    console.log('button disabled');
 }
 
 function draw() {
     ctx.beginPath();
-    ctx.moveTo(prevX, prevY);
-    ctx.lineTo(currX, currY);
-    ctx.strokeStyle = x;
-    ctx.lineWidth = y;
-    ctx.stroke();
+    // ctx.moveTo(prevX, prevY);
+    // ctx.lineTo(currX, currY);
+    // ctx.strokeStyle = x;
+    // ctx.lineWidth = y;
+    // ctx.stroke();
+    // ctx.fillRect(currX - y/2, currY - y/2, y, y);
+    ctx.fillStyle = x
+    ctx.arc(currX - y/4, currY - y/4, y/2, 0, 2 * Math.PI);
+    ctx.fill();
+    
     ctx.closePath();
 } 
 
@@ -87,7 +112,10 @@ function findxy(res, e) {
         if (dot_flag) {
             ctx.beginPath();
             ctx.fillStyle = x;
-            ctx.fillRect(currX, currY, 5, 5);
+            // ctx.fillRect(currX, currY, 2, 2);
+            // ctx.fillRect(currX - y/2, currY - y/2, y, y);
+            ctx.arc(currX - y/4, currY - y/4, y/2, 0, 2 * Math.PI);
+            ctx.fill();
             ctx.closePath();
             dot_flag = false;
         }
@@ -102,13 +130,15 @@ function findxy(res, e) {
             currX = e.clientX - canvas.offsetLeft;
             currY = e.clientY - canvas.offsetTop;
             draw();
+            enableSubmission();
         }
     }
 }
 function erase() {
-    var m = confirm("Want to clear");
-    if (m) {
+    // var m = confirm("Want to clear");
+    // if (m) {
         ctx.clearRect(0, 0, w, h);
+        disableSubmission();
         // document.getElementById("canvasimg").style.display = "none";
-    }
+    // }
 }
