@@ -31,9 +31,9 @@ def upload():
     destination2 = os.path.join(APP_ROOT,destination)
     img = cv2.imread(destination2,0)
     target = os.path.join(APP_ROOT,target)
-    cv2.imwrite(destination2,img) 
+    cv2.imwrite(destination2,img)
 
-
+    
     return render_template('index.html',user_image = destination,imgname = image.filename)
 
 if __name__ == "__main__":
