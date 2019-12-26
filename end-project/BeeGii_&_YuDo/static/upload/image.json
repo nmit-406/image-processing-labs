@@ -2,207 +2,210 @@
     "images": [
         {
             "name":"img1.png",
-            "smile":"100"
+            "smile":"5"
         },
         {
             "name":"img2.jpg",
-            "smile":"100"
+            "smile":"5"
         },
         {
             "name":"img3.jpg",
-            "smile":"80"
+            "smile":"4"
         },
         {
             "name":"img4.jpg",
-            "smile":"100"
+            "smile":"5"
         },
         {
             "name":"img5.jpg",
-            "smile":"80"
+            "smile":"4"
         },
         {
             "name":"img6.jpg",
-            "smile":"80"
+            "smile":"4"
         },
         {
             "name":"img8.jpg",
-            "smile":"80"
+            "smile":"4"
         },
         {
             "name":"img9.jpg",
-            "smile":"80"
+            "smile":"4"
         },
         {
             "name":"img10.jpg",
-            "smile":"80"
+            "smile":"4"
         },
         {
             "name":"img11.png",
-            "smile":"40"
+            "smile":"2"
         },
         {
             "name":"img12.jpg",
-            "smile":"80"
+            "smile":"4"
         },
         {
             "name":"img13.jpg",
-            "smile":"80"
+            "smile":"4"
         },
         {
             "name":"img14.jpg",
-            "smile":"100"
+            "smile":"5"
         },
         {
             "name":"img15.jpg",
-            "smile":"80"
+            "smile":"4"
         },
         {
             "name":"img16.jpg",
-            "smile":"60"
+            "smile":"3"
         },
         {
             "name":"img17.jpg",
-            "smile":"100"
+            "smile":"5"
         },
         {
             "name":"img18.jpg",
-            "smile":"80"
+            "smile":"4"
         },
         {
             "name":"img19.jpg",
-            "smile":"80"
+            "smile":"4"
         },
         {
             "name":"img20.jpg",
-            "smile":"100"
+            "smile":"5"
         },
         {
             "name":"img21.jpg",
-            "smile":"80"
+            "smile":"4"
         },
         {
             "name":"img22.jpg",
-            "smile":"80"
+            "smile":"4"
         },
         {
             "name":"img23.jpg",
-            "smile":"80"
+            "smile":"4"
         },
         {
             "name":"img24.jpg",
-            "smile":"100"
+            "smile":"5"
         },
         {
             "name":"img25.jpg",
-            "smile":"80"
+            "smile":"4"
         },
         {
             "name":"img26.jpg",
-            "smile":"80"
+            "smile":"4"
         },
         {
             "name":"img27.jpg",
-            "smile":"60"
+            "smile":"3"
         },
+       
         {
             "name":"img29.jpg",
-            "smile":"80"
+            "smile":"4"
         },
         {
             "name":"img30.jpg",
-            "smile":"80"
+            "smile":"4"
         },
         {
             "name":"img31.jpg",
-            "smile":"100"
+            "smile":"5"
         },
         {
             "name":"img32.jpg",
-            "smile":"80"
+            "smile":"4"
         },
         {
             "name":"img33.jpg",
-            "smile":"80"
+            "smile":"4"
         },
         {
             "name":"img34.jpg",
-            "smile":"60"
+            "smile":"3"
         },
         {
             "name":"img35.jpg",
-            "smile":"80"
+            "smile":"4"
         },
         {
             "name":"img36.jpg",
-            "smile":"100"
+            "smile":"5"
         },
         {
             "name":"img37.jpg",
-            "smile":"100"
+            "smile":"5"
         },
         {
             "name":"img38.jpg",
-            "smile":"60"
+            "smile":"3"
         },
         {
             "name":"img39.jpg",
-            "smile":"80"
+            "smile":"4"
         },
+       
         {
             "name":"img41.jpg",
-            "smile":"80"
+            "smile":"4"
         },
         {
             "name":"img42.jpg",
-            "smile":"60"
+            "smile":"3"
         },
         {
             "name":"img43.jpg",
-            "smile":"80"
+            "smile":"4"
         },
         {
             "name":"img44.jpg",
-            "smile":"80"
+            "smile":"4"
         },
         {
             "name":"img45.jpg",
-            "smile":"80"
+            "smile":"4"
         },
         {
             "name":"img46.jpg",
-            "smile":"80"
+            "smile":"4"
         },
         {
             "name":"img47.jpg",
-            "smile":"100"
+            "smile":"5"
         },
         {
             "name":"img48.jpg",
-            "smile":"80"
+            "smile":"4"
         },
         {
             "name":"img49.jpg",
-            "smile":"60"
+            "smile":"3"
         },
+        
         {
             "name":"img51.jpg",
             "smile":"0"
         },
         {
             "name":"img52.jpg",
-            "smile":"20"
+            "smile":"1"
         },
         {
             "name":"img53.jpg",
-            "smile":"20"
+            "smile":"1"
         },
         {
             "name":"img54.jpg",
-            "smile":"40"
+            "smile":"2"
         },
         {
             "name":"img55.jpg",
-            "smile":"20"
+            "smile":"1"
         },
         {
             "name":"img56.jpg",
@@ -210,7 +213,7 @@
         },
         {
             "name":"img57.jpg",
-            "smile":"20"
+            "smile":"1"
         },
         {
             "name":"img58.png",
@@ -238,7 +241,7 @@
         },
         {
             "name":"img64.jpg",
-            "smile":"20"
+            "smile":"1"
         },
         {
             "name":"img65.jpg",
@@ -250,7 +253,7 @@
         },
         {
             "name":"img67.jpg",
-            "smile":"20"
+            "smile":"1"
         },
         {
             "name":"img68.jpg",
@@ -296,9 +299,10 @@
             "name":"img78.jpg",
             "smile":"0"
         },
+        
         {
             "name":"img80.jpg",
-            "smile":"20"
+            "smile":"1"
         },
         {
             "name":"img81.jpg",
@@ -312,17 +316,18 @@
             "name":"img83.jpg",
             "smile":"0"
         },
+        
         {
             "name":"img85.jpg",
             "smile":"0"
         },
         {
             "name":"img86.jpg",
-            "smile":"20"
+            "smile":"1"
         },
         {
             "name":"img87.jpg",
-            "smile":"20"
+            "smile":"1"
         },
         {
             "name":"img88.jpg",
@@ -334,11 +339,11 @@
         },
         {
             "name":"img90.jpg",
-            "smile":"20"
+            "smile":"1"
         },
         {
             "name":"img91.jpg",
-            "smile":"20"
+            "smile":"1"
         },
         {
             "name":"img92.jpg",
