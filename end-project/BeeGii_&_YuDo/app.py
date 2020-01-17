@@ -38,9 +38,20 @@ def upload():
     #ineej baigaa esehiig tanih
     img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     a=Predict()
-    #print(a.shalgah(img))
-    
-    return render_template('index.html',user_image = destination,imgname = image.filename, hariu = a.shalgah(img))
+    huwi=a.shalgah(img)
+    if huwi==0:
+        zuwulguu="Хүүе ээ инээмсэглэл хайчваа..."
+    elif huwi==20:
+        zuwulguu="Өшөө инээмсэглэх хэрэгтэй шүү, Инээвэл залуужна гэдэгдээ..."
+    elif huwi==40:
+        zuwulguu="Таныг үүнээс илүү инээмсэглэнэ гэж итгэж байна шүү..."
+    elif huwi==60:
+        zuwulguu="Шүдээ өшөө ярзайлгаад инээмсэглээрэй..(Гэхдээ cool харагдаж байна.)"
+    elif huwi==80:
+        zuwulguu="Та ч царайлаг юмаа, инээхээрээ хөөрхөн юмаа..."
+    elif huwi==100:
+        zuwulguu="Гайхалтай хаанаас ч харахгүй инээмсэглэл байна, Та ч үргэлж залуугаараа байх байхаа.."
+    return render_template('index.html',user_image = destination,imgname = image.filename, hariu = zuwulguu)
 
 if __name__ == "__main__":
     app.run(debug=True)
