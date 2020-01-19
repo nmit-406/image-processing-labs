@@ -15,8 +15,9 @@ class Tsarai:
                 y=0
             h = box[0]['box'][3]
             w = box[0]['box'][2]
+            print(box)
         except IndexError:
             return img
-        return img[y:y+h, x:x+w]
+        return box
         
   
