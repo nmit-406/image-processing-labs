@@ -1,14 +1,25 @@
-{% extends 'base.html' %}
-{% block head %}
 
-{% endblock %}
-{% block body %}
-<div class="content">
-	<h2>Image Convoluted</h2>
-</div>
-<form id="upload-form" action="{{ url_for('upload') }}" enctype="multipart/form-data" method="POST">
-	<input type="file" name="file" accept="image/*" multiple>
-  	
-  	<input type="submit" name="submit" value="send">
-</form>
-{% endblock %}
+<html>
+<head>
+	<title>Demo project</title>
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    
+	<link rel="stylesheet" href="static/main.css">
+</head>
+<body>
+	<div id="content">
+		<h2 >25-с бага эсвэл их настай хүн эсэхийг тодорхойлох тест модель</h2>
+		<p>Та зураг оруулна уу</p>
+		<h3> Энэ {{predict}} байна.<h3>
+    	<br>
+		<img align="center" id="Img" src="{{ url_for('static', filename=image_name) }}">
+		<form id="upload-form" action="{{ url_for('upload') }}" enctype="multipart/form-data" method="POST">
+			<input style="border: 1px solid;" type="file" id="file" name="file" accept="image/*" multiple>
+		  	
+		  	<input type="submit" onclick="loadDoc()" name="submit" value="Шалгах">
+		</form>
+	</div>
+	
+
+</body>
+</html>
